@@ -1,4 +1,4 @@
 Resultados finais:
-Execução 1: 123
-Execução 2: 121
-Execução 3: 136
+Execução 1: 122
+Execução 2: 108
+Execução 3: 103
