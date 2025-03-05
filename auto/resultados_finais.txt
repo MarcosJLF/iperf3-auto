@@ -1,3 +1,0 @@
-Execução 1: {'Taxa de recepção': '2402', 'Taxa de transmissão': '1729', 'Sinal': '92'}
-Execução 2: {'Taxa de recepção': '2402', 'Taxa de transmissão': '1729', 'Sinal': '92'}
-Execução 3: {'Taxa de recepção': '1729', 'Taxa de transmissão': '1729', 'Sinal': '92'}

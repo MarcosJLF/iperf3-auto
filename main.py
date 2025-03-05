@@ -1,6 +1,7 @@
 import os
 import subprocess
 import json
+import time  # Adicionei essa importação, pois você está usando time.sleep
 
 def carregar_configuracao(caminho_config):
     """Carrega as configurações de um arquivo JSON."""
@@ -35,6 +36,17 @@ def coletar_variaveis(config):
 
     return config
 
+def run_script(script_path):
+    """Executa um script Python."""
+    try:
+        result = subprocess.run(["python", script_path], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"\nErro ao executar {script_path}: {result.stderr}")
+        else:
+            print(f"\n{script_path} executado com sucesso.")
+    except Exception as e:
+        print(f"\nErro ao executar {script_path}: {e}")
+
 def main():
     caminho_config = "config.json"
 
@@ -54,10 +66,14 @@ def main():
     print(f"Tempo: {config['tempo']}")
     print(f"Vezes: {config['vezes']}")
 
+    # Caminho para os scripts
+    script_main = os.path.join("./auto", "main.py")
+    script_r = os.path.join("./auto", "r.py")
+
     # Iniciar os scripts Python
-    print("\nIniciando start.py e r.py...")
-    subprocess.run(["python",  " .\auto\start.py"])
-    subprocess.run(["python", "./auto/r.py"])
+    print("\nIniciando scripts...")
+    run_script(script_main)
+    run_script(script_r)
 
 if __name__ == "__main__":
     main()
