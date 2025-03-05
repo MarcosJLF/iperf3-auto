@@ -1,4 +1,7 @@
 import subprocess
+from r_json import main
+
+variaveis = main()
 
 def run_command(command, output_file):
     """Executa um comando e salva a saída em um arquivo."""
@@ -15,8 +18,13 @@ def run_command(command, output_file):
     except Exception as e:
         print("Erro inesperado:", e)
         return False
+    
+ip = variaveis['ip']
+servidor = variaveis['servidor']
+tempo = variaveis['tempo']
+vezes = variaveis['vezes']
 
-command = "iperf3 -c 50.0.0.10 -B 10.0.0.2 -t30 -R"
+command = f"iperf3 -c {servidor} -B {ip} -t{tempo} -R"
 output_file = "iperf_output.txt"
 
 if run_command(command, output_file):

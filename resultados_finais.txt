@@ -1,0 +1,3 @@
+Execução 1: {'Taxa de recepção': '574', 'Taxa de transmissão': '217', 'Sinal': '99'}
+Execução 2: {'Taxa de recepção': '574', 'Taxa de transmissão': '217', 'Sinal': '99'}
+Execução 3: {'Taxa de recepção': '574', 'Taxa de transmissão': '217', 'Sinal': '99'}

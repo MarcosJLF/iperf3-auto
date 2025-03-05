@@ -1,6 +1,7 @@
 import subprocess
 import time
 import sys
+import os
 
 pwd = [
     "./down/main.py",
@@ -14,8 +15,8 @@ def run_script(pwd):
         
         progress = (i + 1) / total_scripts * 100
         update_progress_bar(progress)
-        
-        result = subprocess.run(["python", script], capture_output=True, text=True)
+        script_path = os.path.join(os.path.dirname(__file__), pwd[i])
+        result = subprocess.run(["python", script_path], capture_output=True, text=True)
         
         if result.returncode != 0:
             print(f"\nErro ao executar {script}: {result.stderr}")

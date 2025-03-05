@@ -1,4 +1,4 @@
 Resultados finais:
-Execução 1: 9
-Execução 2: 9
-Execução 3: 9
+Execução 1: 414
+Execução 2: 416
+Execução 3: Erro: Não foi possível obter o valor de Bandwidth.
