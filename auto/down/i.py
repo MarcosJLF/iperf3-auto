@@ -18,7 +18,7 @@ def run_command(command, output_file):
         return False
 
 # Comando a ser executado
-command = "iperf3 -c 50.0.0.10 -B 10.0.0.5 -t30 -R"
+command = "iperf3 -c 50.0.0.10 -B 10.0.0.2 -t30 -R"
 output_file = "iperf_output.txt"
 
 # Executa o comando e salva a saída
