@@ -6,24 +6,20 @@ import os
 pwd = [
     "./down/main.py",
     "./up/main.py",
-    "./data/main.py"
+    "./data/main.py",
+    "./r.py"
 ]
 
-def run_script(pwd):
-    total_scripts = len(pwd)
-    for i, script in enumerate(pwd):
-        
-        progress = (i + 1) / total_scripts * 100
-        update_progress_bar(progress)
-        script_path = os.path.join(os.path.dirname(__file__), pwd[i])
-        result = subprocess.run(["python", script_path], capture_output=True, text=True)
-        
-        if result.returncode != 0:
-            print(f"\nErro ao executar {script}: {result.stderr}")
-        else:
-            print(f"\n{script} executado com sucesso.")
-        
-        time.sleep(1)  
+def run_script(script):
+    script_path = os.path.join(os.path.dirname(__file__), script)
+    result = subprocess.run(["python", script_path], capture_output=True, text=True)
+    
+    if result.returncode != 0:
+        print(f"\nErro ao executar {script}: {result.stderr}")
+    else:
+        print(f"\n{script} executado com sucesso.")
+    
+    time.sleep(1)  
 
 def update_progress_bar(progress):
     """
@@ -38,7 +34,11 @@ def update_progress_bar(progress):
 
 def main():
     print("Iniciando execução dos scripts...")
-    run_script(pwd)
+    total_scripts = len(pwd)
+    for i, script in enumerate(pwd):
+        progress = (i + 1) / total_scripts * 100
+        update_progress_bar(progress)
+        run_script(script)
     print("\nTodos os scripts foram executados!")
 
 if __name__ == "__main__":

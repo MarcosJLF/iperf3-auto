@@ -1,0 +1,4 @@
+Resultados finais:
+Execução 1: 9
+Execução 2: 105
+Execução 3: 9

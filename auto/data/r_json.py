@@ -10,7 +10,7 @@ def carregar_configuracao(caminho_config):
         return json.load(file)
 
 def main():
-    caminho_config = "../../config.json"
+    caminho_config = "../config.json"
 
     config = carregar_configuracao(caminho_config)
 

@@ -9,8 +9,8 @@ def carregar_configuracao(caminho_config):
     with open(caminho_config, "r", encoding="utf-8") as file:
         return json.load(file)
 
-def main():
-    caminho_config = "../../config.json"
+def load_json():
+    caminho_config = "..//config.json"
 
     config = carregar_configuracao(caminho_config)
 
@@ -20,6 +20,3 @@ def main():
     VEZES = int(os.getenv("VEZES", config.get("vezes", 3)))
 
     return {'ip':IP,'servidor': SERVIDOR, 'tempo':TEMPO, 'vezes':VEZES}
-
-if __name__ == "__main__":
-    main()
