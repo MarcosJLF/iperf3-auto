@@ -58,7 +58,7 @@ def load_config():
 def main():
     os.system("cls")
     #config = load_config()
-    ip = "10.0.0.4"
+    ip = "10.0.0.5"
     servidor = "50.0.0.10"
     tempo = 30
     vezes = 3
